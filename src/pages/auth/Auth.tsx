@@ -11,7 +11,7 @@ const Auth = () => {
     const [isSignUp, setIsSignUp] = useState(false);
 
   return (
-    <main className='flex h-[100vh] w-full'>
+    <main className='flex h-[100vh]'>
         <section className='flex-1 flex-col'>
             <div className="flex items-center gap-2">
                 <img src="/icons/logo.png" alt="" className="" />
@@ -37,7 +37,7 @@ const Auth = () => {
                         {isSignUp &&
                             <Checkbox/>
                         }
-                        <Button text={`${isSignUp ? 'Sign Up': 'Sign In'}`}/>
+                        <Button className='' text={`${isSignUp ? 'Sign Up': 'Sign In'}`}/>
                         <div className="flex items-center gap-2">
                             <p className=''>{isSignUp ? 'Already have an account?': "Don't have an account?"}</p>
                             <span className="cursor-pointer text-[#2856ED]" onClick={() => setIsSignUp(!isSignUp)}>{isSignUp ? 'Sign In': 'Create an account'}</span>

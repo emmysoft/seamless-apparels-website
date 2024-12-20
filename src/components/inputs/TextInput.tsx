@@ -17,7 +17,7 @@ const TextInput:FC<IType> = ({type, img, placeholder, label}) => {
         <label htmlFor="" className="">
             {label}
         </label>
-        <div className="flex items-center w-[394px] p-3 border-[1px] rounded-lg">
+        <div className="flex items-center w-[354px] p-3 border-[1px] rounded-lg">
             <img src={img} alt='' />
             <input type={showPassword ? 'text' : type} placeholder={placeholder} className="w-full h-full  px-2 outline-none" />
 

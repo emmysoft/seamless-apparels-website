@@ -1,8 +1,13 @@
 import React from 'react'
+import Header from '../sections/landing/Header';
+import Sale from '../sections/landing/Sale';
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <Header/>
+      <Sale/>
+    </div>
   )
 }
 
