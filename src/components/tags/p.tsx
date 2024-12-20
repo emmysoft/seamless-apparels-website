@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { FC } from 'react'
 
-const P = () => {
+type pType = {
+  text: string;
+}
+
+
+const P:FC<pType> = ({text}) => {
   return (
-    <p className='text-Black font-[400]'>Let’s get started</p>
+    <p className='text-Black font-[400]'>{text}</p>
   )
 }
 

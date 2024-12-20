@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import H2 from '../../components/tags/h2';
 import P from '../../components/tags/p';
 import IconButton from '../../components/buttons/IconButton';
@@ -7,6 +7,9 @@ import Checkbox from '../../components/inputs/Checkbox';
 import Button from '../../components/buttons/Button';
 
 const Auth = () => {
+
+    const [isSignUp, setIsSignUp] = useState(false);
+
   return (
     <main className='flex h-[100vh] w-full'>
         <section className='flex-1 flex-col'>
@@ -16,29 +19,35 @@ const Auth = () => {
             </div>
 
             <div className="flex flex-col justify-center items-center mx-auto mt-4 gap-4">
-                <H2/>
-                <P/>
-                <IconButton/>
+                <H2 text={`${isSignUp ? 'Create your account' : 'Login your account'}`}/>
+                <P text={`${isSignUp ? 'Let’s get started' : 'Welcome back!'}`}/>
 
-                <form action="" className="flex flex-col mt-5 gap-3">
-                    <TextInput/>
-                    <TextInput/>
-                    <TextInput/>
+                { isSignUp &&
+                    <IconButton/>
+                }
+
+                <form action="" className="flex flex-col mt-5 gap-3 p-4">
+                    { isSignUp &&
+                        <TextInput label='Name' type='text' placeholder='First Name and Last Name' img='/auth/username.svg'/>
+                    }
+                    <TextInput label='Email' type='email' placeholder='Email Address' img='/auth/username.svg'/>
+                    <TextInput label='Password' type='password' placeholder='Password' img='/auth/password.svg'/>
 
                     <div className="flex flex-col items-center justify-center mt-4 gap-3">
-                        <Checkbox/>
-                        <Button/>
-
+                        {isSignUp &&
+                            <Checkbox/>
+                        }
+                        <Button text={`${isSignUp ? 'Sign Up': 'Sign In'}`}/>
                         <div className="flex items-center gap-2">
-                            <p className=''>Already have an account?</p>
-                            <span className="cursor-pointer text-[#2856ED]">Sign In</span>
+                            <p className=''>{isSignUp ? 'Already have an account?': "Don't have an account?"}</p>
+                            <span className="cursor-pointer text-[#2856ED]" onClick={() => setIsSignUp(!isSignUp)}>{isSignUp ? 'Sign In': 'Create an account'}</span>
                         </div>
                     </div>
                 </form>
             </div>
         </section>
 
-        <section className='flex-1 relative w-full h-full'>
+        <section className='hidden md:flex flex-1 relative w-full h-full'>
             <div className="flex items-center justify-between w-full absolute px-6 py-2">
                 <span className="font-[600] text-White text-[48px]">FASHION</span>
                 <span className="font-[600] text-White text-[48px]">WEARS</span>

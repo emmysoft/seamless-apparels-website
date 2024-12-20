@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { FC } from 'react';
 
-const H2 = () => {
+type hType = {
+  text: string;
+}
+
+const H2:FC<hType> = ({text}) => {
   return (
-    <h2 className='font-[500] text-4xl text-Black'>Create your account</h2>
+    <h2 className='font-[500] text-4xl text-Black'>{text}</h2>
   )
 }
 

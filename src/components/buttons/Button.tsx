@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { FC } from 'react'
 
-const Button = () => {
+type IBtn = {
+  text: string;
+}
+
+
+const Button:FC<IBtn> = ({text}) => {
   return (
-    <button type='submit' className='w-full py-2 px-4 bg-black text-White border-none rounded-lg'>Sign Up</button>
+    <button type='submit' className='w-full py-2 px-4 bg-black text-White border-none rounded-lg'>{text}</button>
   )
 }
 
