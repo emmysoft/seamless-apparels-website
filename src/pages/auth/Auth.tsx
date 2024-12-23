@@ -19,8 +19,8 @@ const Auth = () => {
             </div>
 
             <div className="flex flex-col justify-center items-center mx-auto mt-4 gap-4">
-                <H2 text={`${isSignUp ? 'Create your account' : 'Login your account'}`}/>
-                <P text={`${isSignUp ? 'Let’s get started' : 'Welcome back!'}`}/>
+                <H2 className='text-4xl font-[500]' text={`${isSignUp ? 'Create your account' : 'Login your account'}`}/>
+                <P className='text-Black font-[400]' text={`${isSignUp ? 'Let’s get started' : 'Welcome back!'}`}/>
 
                 { isSignUp &&
                     <IconButton/>
@@ -37,7 +37,7 @@ const Auth = () => {
                         {isSignUp &&
                             <Checkbox/>
                         }
-                        <Button className='' text={`${isSignUp ? 'Sign Up': 'Sign In'}`}/>
+                        <Button className='w-full' text={`${isSignUp ? 'Sign Up': 'Sign In'}`}/>
                         <div className="flex items-center gap-2">
                             <p className=''>{isSignUp ? 'Already have an account?': "Don't have an account?"}</p>
                             <span className="cursor-pointer text-[#2856ED]" onClick={() => setIsSignUp(!isSignUp)}>{isSignUp ? 'Sign In': 'Create an account'}</span>
