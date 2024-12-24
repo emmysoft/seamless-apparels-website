@@ -25,8 +25,8 @@ const Sale:FC<ISale> = ({data, className, isSale}) => {
 
           <div className="flex items-center justify-center gap-4 flex-wrap p-4">
             {
-              data.map((l) => (
-                <ImageCard className={className}/>
+              data.map((d) => (
+                <ImageCard className={className} d={d}/>
               ))
             }
           </div>
