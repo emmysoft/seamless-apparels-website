@@ -2,12 +2,13 @@ import React, { FC } from 'react'
 
 type pType = {
   text: string;
+  className: string;
 }
 
 
-const P:FC<pType> = ({text}) => {
+const P:FC<pType> = ({text, className}) => {
   return (
-    <p className='text-Black font-[400]'>{text}</p>
+    <p className={`${className}`}>{text}</p>
   )
 }
 

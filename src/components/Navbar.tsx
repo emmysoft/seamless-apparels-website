@@ -34,7 +34,7 @@ const Navbar = () => {
 
 
   return (
-    <main className='flex relative'>
+    <main className='flex relative border-b-[1px]'>
     <div className='w-full flex items-center md:justify-between'>
       <div className="flex items-center p-4 gap-4 justify-between w-full">
         <div className="flex items-center gap-2 w-full md:w-[30%]">
@@ -57,11 +57,11 @@ const Navbar = () => {
         </div>
       </div>
           { openMenu &&
-            <div className="flex flex-col h-[90vh] w-full md:hidden absolute top-12 right-0 justify-center items-center gap-8">
+            <div className="flex flex-col h-[90vh] w-full md:hidden absolute top-12 right-0 justify-center items-center gap-8 bg-[#000] text-[#fff] mt-5">
             {links.map((l) => (
               <Link to={l.url} key={l.name} className='text-inherit uppercase text-lg font-[500]'>{l.name}</Link>
             ))}
-            <Button className='w-[140px]' text='Login'/>
+            <Button className='w-[140px] text-[#000] bg-white font-semibold text-lg' text='Login'/>
           </div>}
     </main>
   )

@@ -2,11 +2,12 @@ import React, { FC } from 'react';
 
 type hType = {
   text: string;
+  className: string;
 }
 
-const H2:FC<hType> = ({text}) => {
+const H2:FC<hType> = ({text, className}) => {
   return (
-    <h2 className='font-[500] text-4xl text-Black'>{text}</h2>
+    <h2 className={` text-Black ${className}`}>{text}</h2>
   )
 }
 
