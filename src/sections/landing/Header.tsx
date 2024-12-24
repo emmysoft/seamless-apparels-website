@@ -11,9 +11,9 @@ const Header = () => {
     <div className='w-full my-4'>
       <div className="max-w-[1200px] mx-auto flex w-full flex-col md:flex-row gap-4 lg:gap-[100px]  px-4 lg:px-0">
         <div className="flex flex-col justify-center w-full lg:w-1/2 p-3 gap-3">
-          <H2 className='text-2xl md:text-3xl lg:text-5xl font-semibold mb-4' text='Creating a fashion wearables around scriptures.'/>
+          <H2 className='text-2xl md:text-3xl lg:text-6xl font-semibold mb-4' text='Creating a fashion wearables around scriptures.'/>
 
-          <P className='text-lg' text='We are a fashion brand established for the purpose of inscribing scriptures on clothings and creating fashion wearables around scriptures in order to communicate the Light of GOD to the people.'/>
+          <P className='text-sm md:text-lg' text='We are a fashion brand established for the purpose of inscribing scriptures on clothings and creating fashion wearables around scriptures in order to communicate the Light of GOD to the people.'/>
           <Button className='w-max mt-5 px-4' text='Explore Now'/>
         </div>
 

@@ -4,7 +4,7 @@ import Sale from '../sections/landing/Sale';
 
 const Home = () => {
   return (
-    <div>
+    <div className='flex flex-col gap-[20px]'>
       <Header/>
       <Sale/>
     </div>
