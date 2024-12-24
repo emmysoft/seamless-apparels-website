@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { FC } from 'react'
 import H2 from './tags/h2';
 
-const ImageCard = () => {
+type ICard = {
+    className: string;
+}
+
+const ImageCard:FC<ICard> = ({className}) => {
   return (
     <div className='flex flex-col justify-center'>
-        <img src="/img/abba.png" alt="" className="h-[354px] w-[297px] lg:w-[357px] lg:h-[404px]" />
+        <img src="/img/abba.png" alt="" className={`${className}`} />
 
         <H2 text='Round Neck' className='text-center font-semibold text-lg'/>
         <div className="flex items-center my-3 justify-center gap-4">
@@ -19,10 +23,3 @@ const ImageCard = () => {
 
 export default ImageCard;
 
-
-// width: 397px
-// height: 454px;
-// top: 1113px;
-// left: 78px;
-// gap: 0px;
-// opacity: 0px;
