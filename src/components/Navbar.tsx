@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Button from './buttons/Button';
 
 
@@ -11,19 +11,19 @@ const links  = [
   },
   {
     name: 'Shop',
-    url: '/show'
+    url: '#'
   },
   {
     name: 'Features',
-    url: '/features'
+    url: '#'
   },
   {
     name: 'Cart (5)',
-    url: '/cart'
+    url: '#'
   },
   {
     name: 'Contact',
-    url: '/contact'
+    url: '#'
   },
 ]
 
@@ -31,6 +31,9 @@ const links  = [
 const Navbar = () => {
 
   const [openMenu, setOpenMenu] = useState(false);
+  const [active, setActive] = useState('Home')
+
+  const navigate = useNavigate()
 
 
   return (
@@ -44,9 +47,19 @@ const Navbar = () => {
 
         <div className="hidden md:flex items-center justify-around gap-2 w-[70%]">
           {links.map((l) => (
-            <Link to={l.url} key={l.name} className='text-inherit uppercase text-lg font-[500]'>{l.name}</Link>
+            <div className="flex flex-col">
+              <Link 
+                to={l.url} key={l.name} 
+                onClick={() => setActive(l.name)}
+                className={`text-inherit uppercase text-lg font-[500] ${active === l.name ? 'text-Black' : 'text-gray-500'}`}>{l.name}</Link>
+             {active === l.name &&  <hr className='bg-[#000] h-0.5 md:h-1'/>}
+            </div>
           ))}
-          <Button className='w-[140px]' text='Login'/>
+          <Button 
+            onClick={(() => navigate('/auth'))}
+            className='w-[140px] bg-black text-White border-none' 
+            text='Login'
+          />
         </div>
       </div>
         <div className="flex md:hidden px-2">
@@ -61,7 +74,11 @@ const Navbar = () => {
             {links.map((l) => (
               <Link to={l.url} key={l.name} className='text-inherit uppercase text-lg font-[500]'>{l.name}</Link>
             ))}
-            <Button className='w-[140px] text-[#000] bg-white font-semibold text-lg' text='Login'/>
+            <Button 
+              onClick={(() => navigate('/auth'))}
+              className='w-[140px] text-[#000] bg-white font-semibold text-lg' 
+              text='Login'
+            />
           </div>}
     </main>
   )
