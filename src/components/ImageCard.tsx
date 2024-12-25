@@ -12,8 +12,8 @@ const ImageCard:FC<ICard> = ({className, d}) => {
         <img src={d.img} alt="" className={`${className}`} />
 
         <H2 text={d.name} className='text-center font-semibold text-lg'/>
-        <div className="flex items-center my-3 justify-center gap-4">
-            <span className='text-lg font-medium'>{d.price}  {' '} | </span>
+        <div className="flex items-center my-3 justify-center gap-2">
+            <span className='text-lg font-medium'>N{d.price}  {' '} | </span>
             
             <span className='text-lg font-medium'>{d.rating}</span>
             <img src="/icons/star.svg" alt="" className="h-4 w-4 object-cover" />

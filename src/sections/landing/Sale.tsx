@@ -8,10 +8,11 @@ import Button from '../../components/buttons/Button';
 type ISale = {
   data: any[];
   className: string;
-  isSale?: boolean
+  isSale?: boolean;
+  isActive: string;
 }
 
-const Sale:FC<ISale> = ({data, className, isSale}) => {
+const Sale:FC<ISale> = ({data, className, isSale, isActive}) => {
 
 
 
@@ -21,7 +22,7 @@ const Sale:FC<ISale> = ({data, className, isSale}) => {
         <H2 text='Best Selling' className='text-center text-3xl lg:text-[48px] mt-[20px] font-semibold'/>
 
         <div className="flex flex-col items-center justify-center">
-          <NavBtns/>
+          <NavBtns isActive={isActive}/>
 
           <div className="flex items-center justify-center gap-4 flex-wrap p-4">
             {
@@ -31,7 +32,7 @@ const Sale:FC<ISale> = ({data, className, isSale}) => {
             }
           </div>
             { isSale && 
-              <Button text='See More' className='w-[200px] py-3 mt-[50px] font-medium lg:mt-[90px] text-lg'/>
+              <Button text='See More' icon='/icons/arrow.svg' className='w-[200px] py-3 mt-[50px] font-medium lg:font-semibold lg:mt-[90px] text-lg text-[#000] bg-[#D9D9D9] rounded-md border-[1px] border-[#000]'/>
             }
         </div>
       </div>
